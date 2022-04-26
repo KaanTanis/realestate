@@ -1,0 +1,18 @@
+{
+    "name": "kaantanis/realestate",
+    "description": "Emlak platformu",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "KaanTanis\\RealEstate\\": "app/"
+        }
+    },
+    "authors": [
+        {
+            "name": "KaanTanis",
+            "email": "kt@kaantanis.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {}
+}
