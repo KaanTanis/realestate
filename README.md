@@ -2,6 +2,14 @@
 
 Yazar: Kaan Tanış <kt@kaantanis.com>
 
+## Sistem Gereksinimleri
+```
+PHP >= 8.0
+Fileinfo PHP Extensio
+JSON PHP Extension
+Mbstring PHP Extension
+```
+
 ## Kurulum
 ```
 Veri tabanı oluşturulur ve database.sql dosyası import edilir. (Default user: root, password: null)

@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types = 1);
+
 namespace App;
 
 use App\Exceptions\ViewNotFoundException;
@@ -31,7 +33,7 @@ class View
         return (string)ob_get_clean();
     }
 
-    public function __get(string $name)
+    public function __get(string $name): ?string
     {
         return $this->params[$name] ?? null;
     }

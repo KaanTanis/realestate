@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types = 1);
+
 namespace App;
 
 use App\Exceptions\RouteNotFoundException;
@@ -12,9 +14,9 @@ use App\Exceptions\RouteNotFoundException;
 class Router
 {
     /**
-     * @var array
+     * @var array|null
      */
-    private array $routes;
+    private ?array $routes;
 
     /**
      * @param string $method
@@ -22,7 +24,7 @@ class Router
      * @param callable|array $action
      * @return $this
      */
-    public function register(string $method, string $route, callable|array $action): self
+    final public function register(string $method, string $route, callable|array $action): self
     {
         $this->routes[$method][$route] = $action;
         return $this;
@@ -33,7 +35,7 @@ class Router
      * @param callable|array $action
      * @return $this
      */
-    public function get(string $route, callable|array $action): self
+    final public function get(string $route, callable|array $action): self
     {
         return $this->register('get', $route, $action);
     }
@@ -43,7 +45,7 @@ class Router
      * @param callable|array $action
      * @return $this
      */
-    public function post(string $route, callable|array $action): self
+    final public function post(string $route, callable|array $action): self
     {
         return $this->register('post', $route, $action);
     }
@@ -51,7 +53,7 @@ class Router
     /**
      * @return array
      */
-    public function routes(): array
+    final public function routes(): array
     {
         return $this->routes();
     }
@@ -59,7 +61,7 @@ class Router
     /**
      * @throws RouteNotFoundException
      */
-    public function resolve(string $requestUri, string $method)
+    final public function resolve(string $requestUri, string $method): mixed
     {
         $route = explode('?', $requestUri)[0];
         $action = $this->routes[$method][$route] ?? null;
