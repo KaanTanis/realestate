@@ -6,5 +6,5 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
-    'Kaantanis\\Realestate\\' => array($baseDir . '/app'),
+    'App\\' => array($baseDir . '/app'),
 );
