@@ -2,7 +2,7 @@
 
 declare(strict_types = 1);
 
-namespace App;
+namespace App\Core;
 
 use App\Exceptions\RouteNotFoundException;
 
@@ -19,6 +19,8 @@ class Router
     private ?array $routes;
 
     /**
+     * Register the routes with requested method (e.g. post, get or etc.)
+     *
      * @param string $method
      * @param string $route
      * @param callable|array $action
@@ -63,7 +65,7 @@ class Router
      */
     final public function resolve(string $requestUri, string $method): mixed
     {
-        $route = explode('?', $requestUri)[0];
+        $route = explode('?', $requestUri)[0]; // Without params
         $action = $this->routes[$method][$route] ?? null;
 
         if (! $action)
@@ -76,6 +78,7 @@ class Router
         if (is_array($action)) {
             [$class, $method] = $action;
 
+            // If class and method exist, run.
             if (class_exists($class)) {
                 $class = new $class();
 

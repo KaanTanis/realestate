@@ -5,6 +5,7 @@ Yazar: Kaan Tanış <kt@kaantanis.com>
 ## Sistem Gereksinimleri
 ```
 PHP >= 8.0
+PHP PDO Extension
 Fileinfo PHP Extensio
 JSON PHP Extension
 Mbstring PHP Extension
@@ -13,7 +14,7 @@ Mbstring PHP Extension
 ## Kurulum
 ```
 Veri tabanı oluşturulur ve database.sql dosyası import edilir. (Default user: root, password: null)
-config/app.php içerisine veri tabanı bilgileri girilir.
+Ana dizindeki .env dosyası içerisine veri tabanı bilgileri girilir.
 ```
 
 ## Giriş bilgileri:

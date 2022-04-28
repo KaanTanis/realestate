@@ -2,10 +2,14 @@
 
 namespace App\Controllers\Admin;
 
+use App\App;
+use App\Models\User;
+
 class AboutController
 {
-    public function index(): string
+    public function index()
     {
-        return 'about';
+        $users = new User();
+        var_dump($users->all());
     }
 }

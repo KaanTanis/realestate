@@ -1,6 +1,19 @@
 <?php
+
+/**
+ * Writen by KaanTanis <kt@kaantanis.com>
+ *
+ * Don't Modify anything this file if you are not a developer
+ */
+
+/** Register The Auto Loader */
 require_once __DIR__ . '/../vendor/autoload.php';
-require_once __DIR__ . '/../config/helpers.php';
+
+/** Session started */
 session_start();
 
-include '../app/web_admin.php';
+/** Register The Helper */
+require_once __DIR__ . '/../helpers/helpers.php';
+
+/** Register The Routes */
+include '../routes/web_admin.php';
